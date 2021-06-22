@@ -17,4 +17,6 @@ jobs:
       # - name: Run test suites
       #   run: inso run test "swagger.json" --env UnitTest --ci
       - name: Generate declarative config
-        run: inso generate config "swagger.json" --type declarative --ci
+        run: inso generate config "swagger.json" --type declarative | tee kong.yml
+      - name: print file
+        run: cat kong.yml
