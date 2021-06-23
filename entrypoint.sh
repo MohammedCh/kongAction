@@ -4,7 +4,7 @@ echo "Hello sir"
 node --version
 
 echo "installing inso"
-npm install -g insomnia-inso
+sudo npm install -g insomnia-inso
 
 echo "inso version"
 inso --version
