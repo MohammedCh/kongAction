@@ -7,7 +7,7 @@ echo "change npm's default directory"
 mkdir ~/.npm-global
 npm config set prefix '~/.npm-global'
 export PATH=~/.npm-global/bin:$PATH
-source ~/.profile
+source ~/.bash_profile
 
 echo "installing inso"
 npm install -g insomnia-inso
