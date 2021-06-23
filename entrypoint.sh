@@ -15,6 +15,7 @@ echo "Hello sir"
 
 # echo "change npm's default directory"
 
+pwd
 ls
 
 # echo "installing inso"
