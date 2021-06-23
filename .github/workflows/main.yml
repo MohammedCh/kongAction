@@ -8,9 +8,18 @@ jobs:
     steps:
       - name: Checkout branch
         uses: actions/checkout@v2
+  hello_world_job:
+    runs-on: ubuntu-latest
+    name: A job to say hello
+    steps:
       - name: Hello world action step
         id: hello
         uses: MohammedCh/kongAction@main
+        with:
+          who-to-greet: 'Mona the Octocat'
+      # Use the output from the `hello` step
+      - name: Get the output time
+        run: echo "The time was ${{ steps.hello.outputs.time }}"
       - name: Install NodeJS
         uses: actions/setup-node@v1
       - name: Install inso
