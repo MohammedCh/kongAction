@@ -15,23 +15,17 @@ echo "Hello sir"
 
 # echo "change npm's default directory"
 
-pwd
-ls
 cd ..
-pwd
-ls
 cd ..
-pwd
-ls
 
-# echo "installing inso"
-# npm install --unsafe-perm -g insomnia-inso
+echo "installing inso"
+npm install --unsafe-perm -g insomnia-inso
 
-# echo "inso version"
-# inso --version
+echo "inso version"
+inso --version
 
-# echo "linting"
-# inso lint spec "swagger.json"
+echo "linting"
+inso lint spec "swagger.json"
 
 # echo "Generate declarative config"
 # inso generate config "swagger.json" --type declarative | tee kong.yml
