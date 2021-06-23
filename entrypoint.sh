@@ -18,6 +18,14 @@ echo "Hello sir"
 pwd
 ls -la
 ls
+cd ..
+pwd
+ls -la
+ls
+cd ..
+pwd
+ls -la
+ls
 
 # echo "installing inso"
 # npm install --unsafe-perm -g insomnia-inso
