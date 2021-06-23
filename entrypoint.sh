@@ -16,15 +16,12 @@ echo "Hello sir"
 # echo "change npm's default directory"
 
 pwd
-ls -la
 ls
 cd ..
 pwd
-ls -la
 ls
 cd ..
 pwd
-ls -la
 ls
 
 # echo "installing inso"
