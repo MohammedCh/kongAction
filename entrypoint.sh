@@ -3,7 +3,7 @@
 echo "Hello sir"
 
 echo "install nvm"
-# curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash
 
 echo "install nvm"
 # nvm install node 14
