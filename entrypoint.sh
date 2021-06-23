@@ -2,12 +2,12 @@
 
 echo "Hello sir"
 
-# echo "install nvm"
-# curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash
+echo "install nvm"
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash
 
-# echo "install nvm"
-# nvm install node 14
-# node --version
+echo "install nvm"
+nvm install node 14
+node --version
 
 # echo "change npm's default directory"
 
