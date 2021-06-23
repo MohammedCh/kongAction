@@ -18,7 +18,6 @@ echo "Hello sir"
 pwd
 ls -la
 ls
-cat swagger.json
 
 # echo "installing inso"
 # npm install --unsafe-perm -g insomnia-inso
