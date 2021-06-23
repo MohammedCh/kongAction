@@ -3,7 +3,7 @@ FROM 10-alpine
 
 USER node
 
-RUN npm install
+RUN npm install -g insomnia-inso
 
 # Copies your code file from your action repository to the filesystem path `/` of the container
 COPY entrypoint.sh /entrypoint.sh
