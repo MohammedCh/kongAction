@@ -1,5 +1,5 @@
 # Container image that runs your code
-FROM 10-alpine
+FROM alpine:3.12
 
 USER node
 
