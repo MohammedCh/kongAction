@@ -14,3 +14,8 @@ inso generate config "filename"
 
 # generate json open api spec
 inso export spec
+
+1) stuff done on main.yml should be moved to dockerfile just like push-to-another-depo action OR to index.js
+2) add the deck stuff too
+3) add artifact upload to main.yml
+4) tested on loyalty repo
