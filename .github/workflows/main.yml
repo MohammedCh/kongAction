@@ -2,30 +2,30 @@ on:
   push:
     branches: [ main ]
 jobs:
-#   hello_world_job:
-#       runs-on: ubuntu-latest
-#       name: A job to say hello
-#       steps:
-#         - name: Hello world action step
-#           id: hello
-#           uses: MohammedCh/kongAction@main
-  Linux:
-    name: Validate API spec
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout branch
-        uses: actions/checkout@v2
-      - name: Install NodeJS
-        uses: actions/setup-node@v1
-      - name: check node version
-        run: node --version
-      - name: Install inso
-        run: npm install -g insomnia-inso
-      - name: Lint
-        run: inso lint spec "swagger.json" --ci
-      # - name: Run test suites
-      #   run: inso run test "swagger.json" --env UnitTest --ci
-      - name: Generate declarative config
-        run: inso generate config "swagger.json" --type declarative | tee kong.yml
-      - name: print file
-        run: cat kong.yml
+  hello_world_job:
+      runs-on: ubuntu-latest
+      name: A job to say hello
+      steps:
+        - name: Hello world action step
+          id: hello
+          uses: MohammedCh/kongAction@main
+  # Linux:
+  #   name: Validate API spec
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - name: Checkout branch
+  #       uses: actions/checkout@v2
+  #     - name: Install NodeJS
+  #       uses: actions/setup-node@v1
+  #     - name: check node version
+  #       run: node --version
+  #     - name: Install inso
+  #       run: npm install -g insomnia-inso
+  #     - name: Lint
+  #       run: inso lint spec "swagger.json" --ci
+  #     # - name: Run test suites
+  #     #   run: inso run test "swagger.json" --env UnitTest --ci
+  #     - name: Generate declarative config
+  #       run: inso generate config "swagger.json" --type declarative | tee kong.yml
+  #     - name: print file
+  #       run: cat kong.yml
