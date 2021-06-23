@@ -3,11 +3,11 @@
 echo "Hello sir"
 
 echo "install nvm"
-touch ~/.bash_profile
+touch ~/.profile
 mkdir ~/.npm-global
 npm config set prefix '~/.npm-global'
 export PATH=~/.npm-global/bin:$PATH
-source ~/.bash_profile
+source ~/.profile
 
 echo "install nvm"
 # nvm install node 14
