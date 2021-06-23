@@ -19,8 +19,8 @@ node --version
 echo "installing inso"
 npm install --unsafe-perm -g insomnia-inso
 
-# echo "inso version"
-# inso --version
+echo "inso version"
+inso --version
 
 # echo "linting"
 # run: inso lint spec "swagger.json" --ci
