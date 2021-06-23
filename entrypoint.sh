@@ -23,10 +23,10 @@ echo "inso version"
 inso --version
 
 echo "linting"
-inso lint spec "swagger.json" --ci
+inso --vebose lint spec "swagger.json" --ci
 
-echo "Generate declarative config"
-inso generate config "swagger.json" --type declarative | tee kong.yml
+# echo "Generate declarative config"
+# inso generate config "swagger.json" --type declarative | tee kong.yml
 
-echo "file:"
-cat kong.yml
+# echo "file:"
+# cat kong.yml
