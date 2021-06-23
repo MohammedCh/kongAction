@@ -1,7 +1,7 @@
 #!/bin/sh -l
 
 echo "Hello sir"
-node --version
+# node --version
 
 # echo "installing inso"
 # npm install -g insomnia-inso
