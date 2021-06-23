@@ -1,7 +1,7 @@
-# Container image that runs your code
-FROM alpine:3.12
-
-USER node
+# specify the node base image with your desired version node:<version>
+FROM node:10
+# replace this with your application's default port
+EXPOSE 8888
 
 RUN npm install -g insomnia-inso
 
