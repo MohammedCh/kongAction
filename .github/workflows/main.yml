@@ -11,8 +11,6 @@ jobs:
       - name: Hello world action step
         id: hello
         uses: MohammedCh/kongAction@main
-        with:
-          who-to-greet: 'Mo'
       - name: Install NodeJS
         uses: actions/setup-node@v1
       - name: Install inso
