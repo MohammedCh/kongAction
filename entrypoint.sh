@@ -17,7 +17,7 @@ node --version
 
 
 echo "installing inso"
-npm install -g insomnia-inso
+sudo npm install --unsafe-perm -g insomnia-inso
 
 # echo "inso version"
 # inso --version
