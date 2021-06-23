@@ -16,7 +16,9 @@ echo "Hello sir"
 # echo "change npm's default directory"
 
 pwd
+ls -la
 ls
+cat swagger.json
 
 # echo "installing inso"
 # npm install --unsafe-perm -g insomnia-inso
