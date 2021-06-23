@@ -8,7 +8,7 @@ echo "install nvm"
 echo "install nvm"
 # nvm install node 14
 node --version
-
+nvm ls
 # echo "change npm's default directory"
 
 
