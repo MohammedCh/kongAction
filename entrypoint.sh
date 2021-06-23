@@ -6,6 +6,9 @@ node --version
 echo "installing inso"
 npm install -g insomnia-inso
 
+echo "inso version"
+inso --version
+
 echo "linting"
 run: inso lint spec "swagger.json" --ci
 
