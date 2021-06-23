@@ -4,7 +4,7 @@ echo "Hello sir"
 node --version
 
 echo "installing inso"
-sudo npm install -g insomnia-inso
+sudo npm install -g insomnia-inso --unsafe-perm
 
 echo "inso version"
 inso --version
