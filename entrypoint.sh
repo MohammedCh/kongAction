@@ -2,10 +2,9 @@
 
 echo "Hello sir"
 node --version
-sudo chown -R $USER '/usr/local/lib/node_modules/insomnia-inso/node_modules'
 
-echo "installing inso"
-npm install -g insomnia-inso
+# echo "installing inso"
+# npm install -g insomnia-inso
 
 echo "inso version"
 inso --version
