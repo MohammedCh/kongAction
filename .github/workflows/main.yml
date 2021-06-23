@@ -16,7 +16,7 @@ jobs:
       - name: Checkout branch
         uses: actions/checkout@v2
       - name: Install NodeJS
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v1
       - name: Install inso
         run: npm install -g insomnia-inso
       - name: Lint
