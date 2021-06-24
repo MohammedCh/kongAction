@@ -2,19 +2,6 @@
 
 echo "Hello sir"
 
-# echo "install nvm"
-# touch ~/.profile
-# mkdir ~/.npm-global
-# npm config set prefix '~/.npm-global'
-# export PATH=~/.npm-global/bin:$PATH
-# source ~/.profile
-
-# echo "install nvm"
-# # nvm install node 14
-# node --version
-
-# echo "change npm's default directory"
-
 cd ..
 cd ..
 
