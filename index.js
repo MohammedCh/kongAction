@@ -34,6 +34,7 @@ async function f() {
         });
     }
 
+    execute("echo 'version:' & inso --version");
     await promisifyExec("echo 'installing inso' & sudo npm install --unsafe-perm -g insomnia-inso")
     execute("echo 'version:' & inso --version");
     execute("echo 'linting:' & inso lint spec 'swagger.json'");
