@@ -1,6 +1,6 @@
 const { exec } = require("child_process");
 
-exec("echo 'installing inso' & sudo npm install --unsafe-perm -g insomnia-inso", (error, stdout, stderr) => {
+await exec("echo 'installing inso' & sudo npm install --unsafe-perm -g insomnia-inso", (error, stdout, stderr) => {
     if (error) {
         console.log(`error: ${error.message}`);
         return;
