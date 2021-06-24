@@ -17,10 +17,6 @@ function promisifyExec(cmd) {
     });
 };
 
-async function promisifyyExec(cmd) {
-    await promisifyExec(cmd);
-}
-
 function execute(cmd) {
     exec(cmd, (error, stdout, stderr) => {
         if (error) {
