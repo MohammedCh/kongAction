@@ -9,7 +9,6 @@ function promisifyExec(cmd) {
             }
             if (stderr) {
                 console.log(`stderr: ${stderr}`);
-                return;
             }
             console.log(`stdout: ${stdout}`);
             resolve(stdout ? stdout : stderr);
@@ -33,7 +32,7 @@ function execute(cmd) {
 
 async function f() {
     console.log("hiiii")
-    await promisifyExec("echo 'installing inso'")
+    await promisifyExec("echo 'installing inso' & sudo npm install --unsafe-perm -g insomnia-inso")
     execute("echo 'version:' & inso --version");
     execute("echo 'linting:' & inso lint spec 'swagger.json'");
     execute("echo 'Generate declarative config:' & inso generate config 'swagger.json' --type declarative | tee kong.yml");
