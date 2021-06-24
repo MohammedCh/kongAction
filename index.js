@@ -33,7 +33,7 @@ function execute(cmd) {
 
 async function f() {
     console.log("hiiii")
-    await promisifyExec("echo 'installing inso' & sudo npm install --unsafe-perm -g insomnia-inso")
+    await promisifyExec("echo 'installing inso'")
     execute("echo 'version:' & inso --version");
     execute("echo 'linting:' & inso lint spec 'swagger.json'");
     execute("echo 'Generate declarative config:' & inso generate config 'swagger.json' --type declarative | tee kong.yml");
