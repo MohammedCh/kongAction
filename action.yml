@@ -4,7 +4,6 @@ inputs:
   directory-filename:
     description: 'Directory and filename of your swagger file'
     required: true
-    default: "swagger.json"
 runs:
   using: 'docker'
   image: 'Dockerfile'
