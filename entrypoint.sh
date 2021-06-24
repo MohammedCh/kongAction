@@ -3,11 +3,14 @@
 echo "Hello sir"
 # USER_EMAIL="$1"
 # USER_NAME="$2"
+echo "hi 1"
 ls
 
+echo "hi 2"
 cd ..
 ls
 
+echo "hi 3"
 cd ..
 
 echo "setup git"
