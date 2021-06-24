@@ -1,6 +1,6 @@
 const { exec } = require("child_process");
 
-exec("echo 'installing inso' & npm install --unsafe-perm -g insomnia-inso", (error, stdout, stderr) => {
+exec("echo 'installing inso' & sudo npm install --unsafe-perm -g insomnia-inso", (error, stdout, stderr) => {
     if (error) {
         console.log(`error: ${error.message}`);
         return;
@@ -36,7 +36,7 @@ exec("echo 'linting:' & inso lint spec 'swagger.json'", (error, stdout, stderr) 
     console.log(`stdout: ${stdout}`);
 });
 
-exec("echo 'Generate declarative config:' & nso generate config 'swagger.json' --type declarative | tee kong.yml", (error, stdout, stderr) => {
+exec("echo 'Generate declarative config:' & inso generate config 'swagger.json' --type declarative | tee kong.yml", (error, stdout, stderr) => {
     if (error) {
         console.log(`error: ${error.message}`);
         return;
