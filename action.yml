@@ -5,7 +5,10 @@ inputs:
     description: 'Directory and filename of your swagger file'
     required: true
 runs:
-  using: 'docker'
-  image: 'Dockerfile'
-  args:
-    - ${{ inputs.directory-filename }}
+  # using: 'docker'
+  # image: 'Dockerfile'
+  # args:
+  # - ${{ inputs.directory-filename }}
+  using: 'node12'
+  main: 'index.js'
+
