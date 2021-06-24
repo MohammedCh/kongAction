@@ -2,53 +2,43 @@ const { exec } = require("child_process");
 
 async function f() {
     console.log("hiiii")
-    await exec("echo 'installing inso' & sudo npm install --unsafe-perm -g insomnia-inso", (error, stdout, stderr) => {
-        if (error) {
-            console.log(`error: ${error.message}`);
-            return;
-        }
-        if (stderr) {
-            console.log(`stderr: ${stderr}`);
-            return;
-        }
-        console.log(`stdout: ${stdout}`);
-    });
 
-    exec("echo 'version:' & inso --version", (error, stdout, stderr) => {
-        if (error) {
-            console.log(`error: ${error.message}`);
-            return;
-        }
-        if (stderr) {
-            console.log(`stderr: ${stderr}`);
-            return;
-        }
-        console.log(`stdout: ${stdout}`);
-    });
+    function promisifyExec(cmd) {
+        return new Promise((resolve, reject) => {
+            exec(cmd, (error, stdout, stderr) => {
+                if (error) {
+                    console.log(`error: ${error.message}`);
+                    return;
+                }
+                if (stderr) {
+                    console.log(`stderr: ${stderr}`);
+                    return;
+                }
+                console.log(`stdout: ${stdout}`);
+                resolve(stdout? stdout : stderr);
+            });
+        });
+    };
 
-    exec("echo 'linting:' & inso lint spec 'swagger.json'", (error, stdout, stderr) => {
-        if (error) {
-            console.log(`error: ${error.message}`);
-            return;
-        }
-        if (stderr) {
-            console.log(`stderr: ${stderr}`);
-            return;
-        }
-        console.log(`stdout: ${stdout}`);
-    });
+    function execute(cmd) {
+        exec(cmd, (error, stdout, stderr) => {
+            if (error) {
+                console.log(`error: ${error.message}`);
+                return;
+            }
+            if (stderr) {
+                console.log(`stderr: ${stderr}`);
+                return;
+            }
+            console.log(`stdout: ${stdout}`);
+        });
+    }
 
-    exec("echo 'Generate declarative config:' & inso generate config 'swagger.json' --type declarative | tee kong.yml", (error, stdout, stderr) => {
-        if (error) {
-            console.log(`error: ${error.message}`);
-            return;
-        }
-        if (stderr) {
-            console.log(`stderr: ${stderr}`);
-            return;
-        }
-        console.log(`stdout: ${stdout}`);
-    });
+    await promisifyExec("echo 'installing inso' & sudo npm install --unsafe-perm -g insomnia-inso")
+    execute("echo 'version:' & inso --version");
+    execute("echo 'linting:' & inso lint spec 'swagger.json'");
+    execute("echo 'Generate declarative config:' & inso generate config 'swagger.json' --type declarative | tee kong.yml");
+
 }
 
 f();
