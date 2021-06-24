@@ -50,3 +50,5 @@ async function f() {
         console.log(`stdout: ${stdout}`);
     });
 }
+
+f();
