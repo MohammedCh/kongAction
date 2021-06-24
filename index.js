@@ -34,8 +34,7 @@ async function f() {
         });
     }
 
-    execute("echo 'version:' & inso --version");
-    await promisifyExec("echo 'installing inso' & sudo npm install --unsafe-perm -g insomnia-inso")
+    promisifyExec("echo 'installing inso' & sudo npm install --unsafe-perm -g insomnia-inso")
     execute("echo 'version:' & inso --version");
     execute("echo 'linting:' & inso lint spec 'swagger.json'");
     execute("echo 'Generate declarative config:' & inso generate config 'swagger.json' --type declarative | tee kong.yml");
