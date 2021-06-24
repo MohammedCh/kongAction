@@ -24,7 +24,6 @@ function execute(cmd) {
         }
         if (stderr) {
             console.log(`stderr: ${stderr}`);
-            return;
         }
         console.log(`stdout: ${stdout}`);
     });
@@ -38,9 +37,5 @@ async function f() {
     execute("echo 'Generate declarative config:' & inso generate config 'swagger.json' --type declarative | tee kong.yml");
 }
 
-(async() => {
-    console.log('1')
-    await f()
-    console.log('2')
-  })()
+f();
 
