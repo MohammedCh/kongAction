@@ -39,4 +39,9 @@ async function f() {
     execute("echo 'Generate declarative config:' & inso generate config 'swagger.json' --type declarative | tee kong.yml");
 }
 
-await f();
+(async() => {
+    console.log('1')
+    await f()
+    console.log('2')
+  })()
+
