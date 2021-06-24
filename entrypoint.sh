@@ -1,9 +1,18 @@
 #!/bin/bash -l
 
 echo "Hello sir"
+USER_EMAIL="$1"
+USER_NAME="$2"
 
 cd ..
 cd ..
+
+echo "setup git"
+git config --global user.email "$USER_EMAIL"
+git config --global user.name "$USER_NAME"
+git fetch
+git checkout -m main swagger.json
+ls
 
 echo "installing inso"
 npm install --unsafe-perm -g insomnia-inso

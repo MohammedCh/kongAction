@@ -1,5 +1,17 @@
 name: 'Hello World'
 description: 'Greet someone and record the time'
+inputs:
+  user-email:
+    description: 'Email for the git commit'
+    required: true
+    default: 'action@github.com'
+  user-name:
+    description: '[Optional] Name for the git commit. Defaults to the destination username/organization name'
+    required: false
+    default: 'GitHub Kong Action'
 runs:
   using: 'docker'
   image: 'Dockerfile'
+  args:
+    - ${{ inputs.user-email }}
+    - ${{ inputs.user-name }}
