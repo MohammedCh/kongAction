@@ -3,7 +3,6 @@ FROM node:14
 
 # Copies your code file from your action repository to the filesystem path `/` of the container
 COPY entrypoint.sh /entrypoint.sh
-# COPY swagger.json /swagger.json
 #should we copy in inso files so it doesnt have to install every time?
 
 
