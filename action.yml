@@ -4,6 +4,9 @@ inputs:
   directory-filename:
     description: 'Directory and filename of your swagger file'
     required: true
+outputs:
+  msg: # id of output
+    description: 'The diff to be commented on the PR'
 runs:
   # using: 'docker'
   # image: 'Dockerfile'

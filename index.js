@@ -1,4 +1,5 @@
 const { exec } = require("child_process");
+const core = require('@actions/core');
 
 function promisifyExec(cmd) {
     return new Promise((resolve, reject) => {
@@ -35,7 +36,8 @@ async function f() {
     execute("echo 'version:' & inso --version");
     execute("echo 'linting:' & inso lint spec 'swagger.json'");
     execute("echo 'Generate declarative config:' & inso generate config 'swagger.json' --type declarative | tee kong.yml");
+    const msg = "hi";
+    core.setOutput("msg", msg);
 }
 
 f();
-
