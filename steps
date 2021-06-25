@@ -1,0 +1,16 @@
+npm init
+
+# install inso
+npm install -g insomnia-inso
+
+# test installation
+inso --version
+
+# lint spec
+inso lint spec "filename"
+
+# generate kong config from spec
+inso generate config "filename"
+
+# generate json open api spec
+inso export spec

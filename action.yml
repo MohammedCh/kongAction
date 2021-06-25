@@ -1,0 +1,17 @@
+name: 'Kong diff'
+description: 'Greet someone and record the time'
+inputs:
+  directory-filename:
+    description: 'Directory and filename of your swagger file'
+    required: true
+outputs:
+  msg: # id of output
+    description: 'The diff to be commented on the PR'
+runs:
+  # using: 'docker'
+  # image: 'Dockerfile'
+  # args:
+  # - ${{ inputs.directory-filename }}
+  using: 'node12'
+  main: 'index.js'
+
