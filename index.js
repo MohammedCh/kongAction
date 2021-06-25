@@ -38,7 +38,7 @@ async function f() {
     execute("echo 'version:' & inso --version");
     execute(`echo 'linting:' & inso lint spec ${swaggerFile}`);
     execute(`echo 'Generate declarative config:' & inso generate config ${swaggerFile} --type declarative > kong.yaml`);
-
+    execute("cat kong.yaml")
 }
 
 f();
