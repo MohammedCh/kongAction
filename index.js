@@ -52,7 +52,7 @@ async function f() {
     await promisifyExec("echo 'installing inso' & sudo npm install --unsafe-perm -g insomnia-inso");
     execute("echo 'version:' & inso --version");
     execute(`echo 'linting:' & inso lint spec ${swaggerFile}`);
-    execute(`echo $(inso generate config ${swaggerFile} --type declarative) > kong.yaml`)
+    executeMsg(`echo 'Generate declarative config:' & inso generate config ${swaggerFile} --type declarative | tee kong.yaml`);)
 }
 
 f();
