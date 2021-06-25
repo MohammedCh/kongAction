@@ -1,6 +1,8 @@
 const { exec } = require("child_process");
 const core = require('@actions/core');
 
+const swaggerFile = core.getInput('directory-filename');
+
 function promisifyExec(cmd) {
     return new Promise((resolve, reject) => {
         exec(cmd, (error, stdout, stderr) => {
@@ -30,14 +32,28 @@ function execute(cmd) {
     });
 }
 
+function executeMsg(cmd) {
+    exec(cmd, (error, stdout, stderr) => {
+        if (error) {
+            console.log(`error: ${error.message}`);
+            return;
+        }
+        if (stderr) {
+            console.log(`stderr: ${stderr}`);
+        }
+        console.log(`stdout: ${stdout}`);
+        const msg = stdout;
+        core.setOutput("msg", msg);
+    });
+}
+
 async function f() {
     console.log("hiiii")
-    await promisifyExec("echo 'installing inso' & sudo npm install --unsafe-perm -g insomnia-inso")
+    await promisifyExec("echo 'installing inso' & sudo npm install --unsafe-perm -g insomnia-inso");
     execute("echo 'version:' & inso --version");
-    execute("echo 'linting:' & inso lint spec 'swagger.json'");
-    execute("echo 'Generate declarative config:' & inso generate config 'swagger.json' --type declarative | tee kong.yml");
-    const msg = "hi";
-    core.setOutput("msg", msg);
+    execute(`echo 'linting:' & inso lint spec ${swaggerFile}`);
+    execute(`echo 'Generate declarative config:' & inso generate config ${swaggerFile} --type declarative | tee kong.yml`);
+    executeMsg("cat kong.yml");
 }
 
 f();
