@@ -14,3 +14,6 @@ inso generate config "filename"
 
 # generate json open api spec
 inso export spec
+
+follow and install vercel/ncc:
+https://docs.github.com/en/actions/creating-actions/creating-a-javascript-action
