@@ -1,4 +1,4 @@
-name: 'Hello World'
+name: 'Kong diff'
 description: 'Greet someone and record the time'
 inputs:
   directory-filename:
